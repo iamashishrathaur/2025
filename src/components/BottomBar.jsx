@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { TiHomeOutline } from 'react-icons/ti';
 import { TbCube } from 'react-icons/tb';
 import { PiFlowerTulipBold } from 'react-icons/pi';
 import { FaRegUser } from 'react-icons/fa';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const BottomBar = () => {
-  const navigate = useNavigate();
-  const location = useLocation(); // Get the current location (URL)
-  const [activeIndex, setActiveIndex] = useState(0);
+  const location = useLocation(); // Get current location
+  const currentPath = location.pathname.toLowerCase(); // Get the current path
 
   const buttonData = [
     { label: 'Home', icon: TiHomeOutline, to: '/' },
@@ -17,15 +16,7 @@ const BottomBar = () => {
     { label: 'Me', icon: FaRegUser, to: '/my' },
   ];
 
-  // Sync activeIndex with the current route
-  useEffect(() => {
-    const currentIndex = buttonData.findIndex(button => button.to === location.pathname);
-    setActiveIndex(currentIndex !== -1 ? currentIndex : 0);
-  }, [location.pathname]); // This will re-run every time the URL changes
-
-  const handleClick = (index, to) => {
-    navigate(to);
-  };
+  const isActive = (to) => currentPath === to.toLowerCase(); // Check if the current path matches the button's path
 
   return (
     <footer className="bottom-bar">
@@ -36,35 +27,29 @@ const BottomBar = () => {
       >
         {buttonData.map((button, index) => {
           const IconComponent = button.icon;
-          const isActive = activeIndex === index;
 
           return (
-            <button
+            <Link
               key={index}
-              onClick={() => handleClick(index, button.to)}
-              className={`flex-auto flex items-center justify-center p-[1.6vw] bg-transparent z-10 transition-all duration-250 
-                ${isActive ? 'text-[#4CA335]' : 'text-[#979797]'}`}
+              to={button.to}
+              aria-label={button.label}
+              className={`flex-auto flex items-center justify-center p-[1.6vw] bg-transparent z-10 transition-all duration-250
+                ${isActive(button.to) ? 'text-[#4CA335]' : 'text-[#979797]'}`}
               style={{ transition: 'margin 0.25s' }}
             >
               <div
-                className={`flex items-center transition-all duration-250 ${
-                  isActive
-                    ? 'bg-[#4CA335] rounded-[4.133333vw] p-[0_4vw_.266667vw] h-[8.266667vw] text-white'
-                    : ''
-                }`}
+                className={`flex items-center transition-all duration-250 ${isActive(button.to) ? 'bg-[#4CA335] rounded-[4.133333vw] p-[0_4vw_.266667vw] h-[8.266667vw] text-white' : ''}`}
               >
                 <IconComponent
-                  className={`text-[5.333333vw] mr-[1.6vw] transition-colors duration-250 ${
-                    isActive ? 'text-white' : 'text-[#bac3d2]'
-                  }`}
+                  className={`text-[5.333333vw] mr-[1.6vw] transition-colors duration-250 ${isActive(button.to) ? 'text-white' : 'text-[#bac3d2]'}`}
                 />
-                {isActive && (
+                {isActive(button.to) && (
                   <span className="text-[3.733333vw] font-medium">
                     {button.label}
                   </span>
                 )}
               </div>
-            </button>
+            </Link>
           );
         })}
       </div>

@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import My from './pages/My';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Products from './pages/Products';
+import BottomBar from './components/BottomBar';
 
 function App() {
   const routes = createBrowserRouter([
