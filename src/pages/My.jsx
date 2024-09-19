@@ -13,7 +13,7 @@ const My = () => {
          <MeList/>
          <div className='bg-white rounded-[2.666667vw] p-[3.466667vw_4vw_.8vw]'>
            <MenuItem/>
-           <MenuItem/>
+           {/* <MenuItem/> */}
          </div>
     </div>
   )

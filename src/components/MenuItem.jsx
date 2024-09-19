@@ -13,17 +13,17 @@ import nextArrow from '../assets/next_arrow.png'
 
 const MenuItem = () => {
   const items = [
-    { name: 'My Order', icon: orderIcon },
-    { name: 'Team', icon: teamIcon },
-    { name: 'Vip Level', icon: vipIcon },
-    { name: 'Fund Record', icon: recordIcon },
-    { name: 'Bank Card', icon: bankIcon },
-    { name: 'Commission', icon: commissionIcon },
-    { name: 'Help Center', icon: helpIcon },
-    { name: 'My Info', icon: myIcon },
-    { name: 'Reset Password', icon: passwordIcon },
-    { name: 'Language', icon: languageIcon },
-    { name: 'Download App', icon: downloadIcon },
+    { name: 'My Order', icon: orderIcon,hint:'₹ 0' },
+    { name: 'Team', icon: teamIcon ,hint:'0'},
+    { name: 'Vip Level', icon: vipIcon,hint:'' },
+    { name: 'Fund Record', icon: recordIcon ,hint:''},
+    { name: 'Bank Card', icon: bankIcon ,hint:'Please add bank card'},
+    { name: 'Commission', icon: commissionIcon ,hint:'₹ 0'},
+    { name: 'Help Center', icon: helpIcon ,hint:''},
+    { name: 'My Info', icon: myIcon ,hint:''},
+    { name: 'Reset Password', icon: passwordIcon ,hint:''},
+    { name: 'Language', icon: languageIcon ,hint:''},
+    { name: 'Download App', icon: downloadIcon ,hint:''},
   ];
 
   return (
@@ -36,11 +36,11 @@ const MenuItem = () => {
               alt={`${item.name} icon`}
             />
           </div>
-          <div className="name">{item.name}</div>
+          <div className="text-[3.733333vw]">{item.name}</div>
         </div>
         <div className="flex items-center">
           <div className="text-[#949494] text-[3.2vw]">
-            <p className="text-[#4ca335]">₹ 0</p>
+            <p className="text-[#949494]">{item.hint}</p>
           </div>
           <div className="w-[1.6vw] ml-[1.866667vw]">
             <img
