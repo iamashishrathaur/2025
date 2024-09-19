@@ -5,6 +5,7 @@ import My from './pages/My';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Products from './pages/Products';
 import BottomBar from './components/BottomBar';
+import NewComment from './pages/NewComment';
 
 function App() {
   const routes = createBrowserRouter([
@@ -19,6 +20,11 @@ function App() {
     {
       path: '/comments',
       element: <Comments />,
+    },
+
+    {
+      path: '/postcomment',
+      element: <NewComment/>,
     },
     {
       path: '/products',
