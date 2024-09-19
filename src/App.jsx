@@ -1,7 +1,9 @@
 import './App.css';
+import Comments from './pages/Comments';
 import Home from './pages/Home';
 import My from './pages/My';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Products from './pages/Products';
 
 function App() {
   const routes = createBrowserRouter([
@@ -12,6 +14,14 @@ function App() {
     {
       path: '/my',
       element: <My />,
+    },
+    {
+      path: '/comments',
+      element: <Comments />,
+    },
+    {
+      path: '/products',
+      element: <Products />,
     },
   ]);
 
