@@ -20,10 +20,6 @@ const TopBar = () => {
       </div>
     </div>
     <div className="h-[6.4vw] w-[6.4vw] relative">
-      <i
-        className="font-[4.8vw]"
-        style={{ transitionDuration: "0ms" }}
-      />
       <IoMdNotificationsOutline  className="text-[5.8vw]"/>
       {/**/}
     </div>
