@@ -4,9 +4,11 @@ import UserInfo from '../components/UserInfo'
 import WalletInfo from '../components/WalletInfo'
 import MeList from '../components/MeList'
 import MenuItem from '../components/MenuItem'
+import BottomBar from '../components/BottomBar'
 
 const My = () => {
   return (
+   <>
     <div className="bg-gradient-to-b from-[#ecfade] to-[#efefef] min-h-screen flex flex-col p-[4vw]">
          <UserInfo/>
          <WalletInfo/>
@@ -15,7 +17,10 @@ const My = () => {
            <MenuItem/>
            {/* <MenuItem/> */}
          </div>
+         
     </div>
+    <BottomBar/>
+   </>
   )
 }
 

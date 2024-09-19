@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TiHomeOutline } from 'react-icons/ti';
 import { TbCube } from 'react-icons/tb';
 import { PiFlowerTulipBold } from 'react-icons/pi';
 import { FaRegUser } from 'react-icons/fa';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const BottomBar = () => {
-  const [activeIndex, setActiveIndex] = useState(0); // Store the active button index
+  const navigate = useNavigate();
+  const location = useLocation(); // Get the current location (URL)
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  // Define the button data for dynamic rendering
   const buttonData = [
-    { label: 'Home', icon: TiHomeOutline },
-    { label: 'Product', icon: TbCube },
-    { label: 'Comment', icon: PiFlowerTulipBold },
-    { label: 'Me', icon: FaRegUser },
+    { label: 'Home', icon: TiHomeOutline, to: '/' },
+    { label: 'Product', icon: TbCube, to: '/products' },
+    { label: 'Comment', icon: PiFlowerTulipBold, to: '/comments' },
+    { label: 'Me', icon: FaRegUser, to: '/my' },
   ];
 
-  const handleClick = (index) => {
-    setActiveIndex(index);
+  // Sync activeIndex with the current route
+  useEffect(() => {
+    const currentIndex = buttonData.findIndex(button => button.to === location.pathname);
+    setActiveIndex(currentIndex !== -1 ? currentIndex : 0);
+  }, [location.pathname]); // This will re-run every time the URL changes
+
+  const handleClick = (index, to) => {
+    navigate(to);
   };
 
   return (
@@ -33,8 +41,8 @@ const BottomBar = () => {
           return (
             <button
               key={index}
-              onClick={() => handleClick(index)}
-              className={`flex-auto flex items-center justify-center p-[1.6vw_3.2vw_2.133333vw] bg-transparent z-10 transition-all duration-250 
+              onClick={() => handleClick(index, button.to)}
+              className={`flex-auto flex items-center justify-center p-[1.6vw] bg-transparent z-10 transition-all duration-250 
                 ${isActive ? 'text-[#4CA335]' : 'text-[#979797]'}`}
               style={{ transition: 'margin 0.25s' }}
             >
@@ -50,7 +58,11 @@ const BottomBar = () => {
                     isActive ? 'text-white' : 'text-[#bac3d2]'
                   }`}
                 />
-                {isActive && <span className="text-[3.733333vw] font-medium">{button.label}</span>}
+                {isActive && (
+                  <span className="text-[3.733333vw] font-medium">
+                    {button.label}
+                  </span>
+                )}
               </div>
             </button>
           );

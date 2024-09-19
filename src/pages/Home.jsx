@@ -4,9 +4,11 @@ import BalanceCard from '../components/BalanceCard'
 import TabBox from '../components/TabBox'
 import UrlBox from '../components/UrlBox'
 import RewardsItems from '../components/RewardsItems'
+import BottomBar from '../components/BottomBar'
 
 const Home = () => {
   return (
+    <>
     <div className="bg-gradient-to-b from-[#ecfade] to-[#efefef] min-h-screen flex flex-col">
    <TopBar/>
    <BalanceCard/>
@@ -19,7 +21,9 @@ const Home = () => {
     </div>
     <RewardsItems/>
   
-  </div>
+    </div>
+    <BottomBar/>
+    </>
   
   )
 }

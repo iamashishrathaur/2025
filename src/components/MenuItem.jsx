@@ -11,19 +11,19 @@ import languageIcon from '../assets/language_icon.png';
 import downloadIcon from '../assets/download_icon.png';
 import nextArrow from '../assets/next_arrow.png'
 
-const MenuItem = () => {
+const MenuItem = ({ balance, teamCount, commission }) => {
   const items = [
-    { name: 'My Order', icon: orderIcon,hint:'₹ 0' },
-    { name: 'Team', icon: teamIcon ,hint:'0'},
-    { name: 'Vip Level', icon: vipIcon,hint:'' },
-    { name: 'Fund Record', icon: recordIcon ,hint:''},
-    { name: 'Bank Card', icon: bankIcon ,hint:'Please add bank card'},
-    { name: 'Commission', icon: commissionIcon ,hint:'₹ 0'},
-    { name: 'Help Center', icon: helpIcon ,hint:''},
-    { name: 'My Info', icon: myIcon ,hint:''},
-    { name: 'Reset Password', icon: passwordIcon ,hint:''},
-    { name: 'Language', icon: languageIcon ,hint:''},
-    { name: 'Download App', icon: downloadIcon ,hint:''},
+    { name: 'My Order', icon: orderIcon, hint: `₹ ${balance || 0}` },
+    { name: 'Team', icon: teamIcon, hint: `${teamCount || 0}` },
+    { name: 'Vip Level', icon: vipIcon, hint: '' },
+    { name: 'Fund Record', icon: recordIcon, hint: '' },
+    { name: 'Bank Card', icon: bankIcon, hint:'Please add bank card' },
+    { name: 'Commission', icon: commissionIcon, hint: `₹ ${commission || 0}` },
+    { name: 'Help Center', icon: helpIcon, hint: '' },
+    { name: 'My Info', icon: myIcon, hint: '' },
+    { name: 'Reset Password', icon: passwordIcon, hint: '' },
+    { name: 'Language', icon: languageIcon, hint: '' },
+    { name: 'Download App', icon: downloadIcon, hint: '' },
   ];
 
   return (
@@ -39,8 +39,8 @@ const MenuItem = () => {
           <div className="text-[3.733333vw]">{item.name}</div>
         </div>
         <div className="flex items-center">
-          <div className="text-[#949494] text-[3.2vw]">
-            <p className="text-[#949494]">{item.hint}</p>
+          <div className={`text-[3.2vw] ${index === 0 ? 'text-[#4ca335]' : 'text-[#949494]'}`} >
+            <p>{item.hint}</p>
           </div>
           <div className="w-[1.6vw] ml-[1.866667vw]">
             <img
