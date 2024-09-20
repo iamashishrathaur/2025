@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IoChevronBackSharp } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 import meBg from '../assets/me_bg.png';
+import emptyIcon from '../assets/no_data.png'
 
 const MyOrder = () => {
   const navigate = useNavigate();
@@ -73,6 +74,10 @@ const MyOrder = () => {
             </div>
           </div>
         </div>
+
+         <div className='m-[20vh_0] flex items-center justify-center'>
+           <img src={emptyIcon} alt="" />
+       </div>
       </div>
     </div>
   );
