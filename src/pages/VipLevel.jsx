@@ -15,9 +15,9 @@ const VipLevel = () => {
   const progressPercentage = (currentPoints / requiredPoints) * 100;
 
   return (
-    <div className="bg-gradient-to-b from-[#ecfade] to-[#efefef] min-h-screen flex flex-col relative z-[-2]">
+    <div className="bg-gradient-to-b from-[#ecfade] to-[#efefef] min-h-screen flex flex-col relative z-[0]">
       {/* Header */}
-      <header className='h-[16vw] w-full text-[5.333333vw]'>
+      <header className='h-[16vw] w-full text-[5.333333vw] z-10'>
         <div className='flex h-full'>
           <div className='w-1/3 flex justify-start items-center'>
             <button

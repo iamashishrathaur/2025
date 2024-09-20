@@ -27,23 +27,31 @@ const CommentSample = () => {
     <div className="text-[#262626] text-[3.2vw] p-[2.666667vw_0]">
       Second withdraw successful
     </div>
-    <div className="flex items-center flex-wrap w-full">
-      <div className="mr-[2vw] mb-[1.333333vw]" style={{width: `calc((100% - 6) / 3)`}}>
+    <div className="flex items-center flex-wrap">
+      <div className="mr-[2vw] mb-[1.333333vw]" style={{ width: `calc(33.33% - 2vw)` }}>
         <img
           src="https://api.dehaatll.com/storage/client/23e86bc8-339c-434a-a7be-7f318f7f6025.jpg"
+          alt="Image 1"
+          className="w-full h-auto"
         />
       </div>
-      <div className="mr-[2vw] mb-[1.333333vw]" style={{width: `calc((100% - 6) / 3)`}}>
+      <div className="mr-[2vw] mb-[1.333333vw]" style={{ width: `calc(33.33% - 2vw)` }}>
         <img
           src="https://api.dehaatll.com/storage/client/23e86bc8-339c-434a-a7be-7f318f7f6025.jpg"
+          alt="Image 2"
+          className="w-full h-auto"
         />
       </div>
-      <div className="mr-[2vw] mb-[1.333333vw]" style={{width: `calc((100% - 6) / 3)`}}>
+      <div className="mr-[2vw] mb-[1.333333vw]" style={{ width: `calc(33.33% - 2vw)` }}>
         <img
           src="https://api.dehaatll.com/storage/client/23e86bc8-339c-434a-a7be-7f318f7f6025.jpg"
+          alt="Image 3"
+          className="w-full h-auto"
         />
       </div>
+      
     </div>
+
   </div>
   
   )
