@@ -10,26 +10,29 @@ import passwordIcon from '../assets/password_icon.png';
 import languageIcon from '../assets/language_icon.png';
 import downloadIcon from '../assets/download_icon.png';
 import nextArrow from '../assets/next_arrow.png'
+import { useNavigate } from 'react-router-dom';
 
 const MenuItem = ({ balance, teamCount, commission }) => {
   const items = [
-    { name: 'My Order', icon: orderIcon, hint: `₹ ${balance || 0}` },
-    { name: 'Team', icon: teamIcon, hint: `${teamCount || 0}` },
-    { name: 'Vip Level', icon: vipIcon, hint: '' },
-    { name: 'Fund Record', icon: recordIcon, hint: '' },
-    { name: 'Bank Card', icon: bankIcon, hint:'Please add bank card' },
-    { name: 'Commission', icon: commissionIcon, hint: `₹ ${commission || 0}` },
-    { name: 'Help Center', icon: helpIcon, hint: '' },
-    { name: 'My Info', icon: myIcon, hint: '' },
-    { name: 'Reset Password', icon: passwordIcon, hint: '' },
-    { name: 'Language', icon: languageIcon, hint: '' },
-    { name: 'Download App', icon: downloadIcon, hint: '' },
+    { name: 'My Order', icon: orderIcon, hint: `₹ ${balance || 0}`,to:'/myorder' },
+    { name: 'Team', icon: teamIcon, hint: `${teamCount || 0}`,to:'' },
+    { name: 'Vip Level', icon: vipIcon, hint: '',to:'' },
+    { name: 'Fund Record', icon: recordIcon, hint: '',to:''},
+    { name: 'Bank Card', icon: bankIcon, hint:'Please add bank card',to:'' },
+    { name: 'Commission', icon: commissionIcon, hint: `₹ ${commission || 0}`,to:'' },
+    { name: 'Help Center', icon: helpIcon, hint: '',to:'' },
+    { name: 'My Info', icon: myIcon, hint: '',to:'' },
+    { name: 'Reset Password', icon: passwordIcon, hint: '',to:'' },
+    { name: 'Language', icon: languageIcon, hint: '',to:'' },
+    { name: 'Download App', icon: downloadIcon, hint: '',to:'' },
   ];
+  const navigate = useNavigate();
 
   return (
+    
     items.map((item, index) => (
-      <div key={index} className="flex items-center justify-between border-b border-[#ECECEC] h-[12.266667vw] last:border-0">
-        <div className="flex items-center font-normal">
+      <div key={index} className="flex items-center justify-between border-b border-[#ECECEC] h-[12.266667vw] last:border-0" onClick={()=>navigate(item.to)}> 
+        <div className="flex items-center font-normal ">
           <div className="size-[5.333333vw] mr-[2.666667vw]">
             <img
               src={item.icon}

@@ -2,6 +2,7 @@ import React from 'react';
 import { FaPlus } from 'react-icons/fa';
 import { IoChevronBackSharp } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
+import { RatingReview } from '../components/RatingReview';
 
 const NewComment = () => {
     const navigate = useNavigate()
@@ -58,31 +59,7 @@ const NewComment = () => {
       <p className="text-[#161827] text-[4.26667vw] mb-[1.33333vw]">Score</p>
       <div className="flex items-center">
         <div className="h-[10.6667vw] flex items-center p-[0px_4.66667vw] rounded-[5.33333vw] bg-[#f0f0f0]">
-          <div
-            role="radiogroup"
-            className="van-rate"
-            tabIndex={0}
-            aria-disabled="false"
-            aria-readonly="false"
-          >
-            {[1, 2, 3, 4, 5].map((value) => (
-              <div
-                key={value}
-                role="radio"
-                className="van-rate__item"
-                tabIndex={0}
-                aria-setsize={5}
-                aria-posinset={value}
-                aria-checked={value <= 5} // Example: Check if value is less than or equal to the current rating
-                style={{ paddingRight: 6 }}
-              >
-                <i
-                  className="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full"
-                  style={{ color: "rgb(226, 92, 92)", fontSize: 26 }}
-                />
-              </div>
-            ))}
-          </div>
+          <RatingReview/>
         </div>
         <p className="text-black opacity-85 text-[3.73333vw] ml-[2.4vw]">5 POINTS</p>
       </div>

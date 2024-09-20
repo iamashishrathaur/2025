@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Products from './pages/Products';
 import BottomBar from './components/BottomBar';
 import NewComment from './pages/NewComment';
+import MyOrder from './pages/MyOrder';
 
 function App() {
   const routes = createBrowserRouter([
@@ -29,6 +30,10 @@ function App() {
     {
       path: '/products',
       element: <Products />,
+    },
+    {
+      path: '/myorder',
+      element: <MyOrder />,
     },
   ]);
 
