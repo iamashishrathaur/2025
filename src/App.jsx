@@ -9,6 +9,7 @@ import NewComment from './pages/NewComment';
 import MyOrder from './pages/MyOrder';
 import VipLevel from './pages/VipLevel';
 import HelpCenter from './pages/HelpCenter';
+import MyInfo from './pages/MyInfo';
 
 function App() {
   const routes = createBrowserRouter([
@@ -44,6 +45,10 @@ function App() {
     {
       path: '/help',
       element: <HelpCenter />,
+    },
+    {
+      path: '/myinfo',
+      element: <MyInfo/>,
     },
   ]);
 
