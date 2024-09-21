@@ -17,7 +17,7 @@ const MenuItem = ({ balance, teamCount, commission }) => {
     { name: 'My Order', icon: orderIcon, hint: `₹ ${balance || 0}`,to:'/myorder' },
     { name: 'Team', icon: teamIcon, hint: `${teamCount || 0}`,to:'' },
     { name: 'Vip Level', icon: vipIcon, hint: '',to:'/viplevel' },
-    { name: 'Fund Record', icon: recordIcon, hint: '',to:''},
+    { name: 'Fund Record', icon: recordIcon, hint: '',to:'/fundrecord'},
     { name: 'Bank Card', icon: bankIcon, hint:'Please add bank card',to:'' },
     { name: 'Commission', icon: commissionIcon, hint: `₹ ${commission || 0}`,to:'' },
     { name: 'Help Center', icon: helpIcon, hint: '',to:'/help' },

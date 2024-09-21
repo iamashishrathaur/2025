@@ -10,6 +10,7 @@ import MyOrder from './pages/MyOrder';
 import VipLevel from './pages/VipLevel';
 import HelpCenter from './pages/HelpCenter';
 import MyInfo from './pages/MyInfo';
+import FundRecord from './pages/FundRecord';
 
 function App() {
   const routes = createBrowserRouter([
@@ -49,6 +50,10 @@ function App() {
     {
       path: '/myinfo',
       element: <MyInfo/>,
+    },
+    {
+      path: '/fundrecord',
+      element: <FundRecord/>,
     },
   ]);
 

@@ -37,7 +37,7 @@ const MyInfo = () => {
             />
             <input type="file" className="w-0 h-0 invisible" accept="image/*" />
             <div className="absolute right-0 bottom-[1.333333vw] size-[8.533333vw]">
-              <img src={editIcon} alt="Edit Icon" />
+              <img src={editIcon} className='w-full h-full' alt="Edit Icon" />
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@ const MyInfo = () => {
           </label>
           <div className="p-[1.333333vw_3.733333vw] bg-white rounded-[2.133333vw] h-[13.066667vw] border border-black border-opacity-15 flex items-center">
             <input
-              className="w-full outline-none bg-transparent text-black caret-[#4CA335]"
+              className="w-full outline-none bg-transparent text-black caret-[#4CA335] text-[4vw]"
               type="text"
               placeholder="Please enter user name..."
               autoComplete="off"
@@ -63,7 +63,7 @@ const MyInfo = () => {
           </label>
           <div className="p-[1.333333vw_3.733333vw] bg-white rounded-[2.133333vw] h-[13.066667vw] border border-black border-opacity-15 flex items-center">
             <input
-              className="w-full outline-none bg-transparent text-black caret-[#4CA335]"
+              className="w-full outline-none bg-transparent text-black caret-[#4CA335] text-[4vw]"
               type="text"
               placeholder="Please enter email..."
               autoComplete="off"
