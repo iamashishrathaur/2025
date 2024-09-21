@@ -13,6 +13,7 @@ import MyInfo from './pages/MyInfo';
 import FundRecord from './pages/FundRecord';
 import ResetPassword from './pages/ResetPassword';
 import About from './pages/About';
+import Deposit from './pages/Deposit';
 
 function App() {
   const routes = createBrowserRouter([
@@ -64,6 +65,10 @@ function App() {
     {
       path: '/about',
       element: <About/>,
+    },
+    {
+      path: '/deposit',
+      element: <Deposit/>,
     },
   ]);
 
