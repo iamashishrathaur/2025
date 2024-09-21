@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const MeList = () => {
+  const navigate = useNavigate();
   return (
     <div className="m-[2.666667vw_0_4.533333vw] flex justify-between">
     <div className="bg-white flex items-center flex-col p-[4vw_2.666667vw_1.333333vw] w-[32%] rounded-[1.866667vw]">
@@ -31,7 +33,7 @@ const MeList = () => {
         ₹0
       </p>
     </div>
-    <div  className="bg-white flex items-center flex-col p-[4vw_2.666667vw_1.333333vw] w-[32%] rounded-[1.866667vw]">
+    <div  className="bg-white flex items-center flex-col p-[4vw_2.666667vw_1.333333vw] w-[32%] rounded-[1.866667vw]" onClick={()=>navigate('/about')}>
       <div  className="w-[5.866667vw]">
         <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAmCAYAAAC76qlaAAAABHNCSVQICAgIfAhkiAAAA31JREFUWIXNl0FvE0cUx39joAoKiBQqIYKQEoFSlR6aKHa4EHV96mUtJR/Akk89cSh8gd3wBdoD99Bsz4SDT1zsHKuA4ksvaZEtJKi4gCUOuTEcdieeHY93Z+3g5C+tRvtm5s3Pz29m3gqmKD8qByBCoA/MDVoZNusvt4r4EmOsHwAb2nsf2ALaWZMS6N+IgW3qNOv7K64QRcA9oJXRHxL/gCH5UTkQUjSkYAFASNGTQi4wiLySM3zJZRD50BCDB6bRhAaQ4vPTZn1fgNw0hi/7UeXABcgF3MMOHQId4qjptmN4GzTIqsrnZv1lG2TV8OsEn5cqNugOoP+dAdAAHY7Qj8qMgG6bi/hR2QMxtE5W2mSBu0ArpeCXNudZ/OV6/8LseS1/7dBKReFHpUoRaIg35VOgt7Q5z6317ygCDcXTxhbxotDHWn1wu/XtnUv3Z659c35gzYfW5Rp5E9xjTGjbOd198f7hP9GbP1yhNV9eHryeKmNDxxIhqTNZVseBBre0UeAeE0DHETo+FvvZp4ebRsHX/qpswwD8d2NAgUgD8DODaM/ZoFcf3G6BaK0/vrvt6tQK/xnPj8pBifgoW54AOlfrj+9u37h31QO4sjjbiH+Em0z4+F4QGyXSBdNY0GZl50eVA5UWflQOrizONvT+T2+PPCzlQYb/NshQMy2XSEf7eSHilNKOQez6UUUmm/ZYh8/ecrj7DkbUNq5yLbJylUS9o5mGytf///7QPtx919NMIc7wqQB0SsQ3nu7Ic3M0rOScVfB9UgWYDF89eV1N1usZa2bC13bWutprH+RDkUwKjbFVcj4M8qQffckp42k+rYUZlnq+trPWTWp3pU6zvr+ibs4AML9OJobXpILTTvwqW4MM+FHQAOcSwx4wQ7xRZxJbI7H3xoAUxjwveRaS9s/E91xim9PGAezVorX3UsibNmgdfBx4z2JXkW1oPvXWCf77zZve1R8u/zgKepQC4CMgtcezQEuGywRlV4+56QKtr2XYu/rcn35dlH5UkbWdyn95wEXgRwFMCp9a049WHxWBPi34VMQvXDxXKNKnBX9kjHX60j8r8CcK/bXhu3xFaB3uJOGnAq3DnRT81KB1uJOEnwq0DjcOvJke/06BdUhF4aea03kqAn9moJWy4G19ZwJayQQ0YU81p/Nki+6ZjbQpldMfjda86ifWF7eJGVFMm3Z6AAAAAElFTkSuQmCC"

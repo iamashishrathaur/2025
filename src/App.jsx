@@ -12,6 +12,7 @@ import HelpCenter from './pages/HelpCenter';
 import MyInfo from './pages/MyInfo';
 import FundRecord from './pages/FundRecord';
 import ResetPassword from './pages/ResetPassword';
+import About from './pages/About';
 
 function App() {
   const routes = createBrowserRouter([
@@ -59,6 +60,10 @@ function App() {
     {
       path: '/resetpassword',
       element: <ResetPassword/>,
+    },
+    {
+      path: '/about',
+      element: <About/>,
     },
   ]);
 
