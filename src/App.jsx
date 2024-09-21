@@ -11,6 +11,7 @@ import VipLevel from './pages/VipLevel';
 import HelpCenter from './pages/HelpCenter';
 import MyInfo from './pages/MyInfo';
 import FundRecord from './pages/FundRecord';
+import ResetPassword from './pages/ResetPassword';
 
 function App() {
   const routes = createBrowserRouter([
@@ -54,6 +55,10 @@ function App() {
     {
       path: '/fundrecord',
       element: <FundRecord/>,
+    },
+    {
+      path: '/resetpassword',
+      element: <ResetPassword/>,
     },
   ]);
 

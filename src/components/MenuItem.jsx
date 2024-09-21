@@ -22,7 +22,7 @@ const MenuItem = ({ balance, teamCount, commission }) => {
     { name: 'Commission', icon: commissionIcon, hint: `₹ ${commission || 0}`,to:'' },
     { name: 'Help Center', icon: helpIcon, hint: '',to:'/help' },
     { name: 'My Info', icon: myIcon, hint: '',to:'/myinfo' },
-    { name: 'Reset Password', icon: passwordIcon, hint: '',to:'' },
+    { name: 'Reset Password', icon: passwordIcon, hint: '',to:'/resetpassword' },
     { name: 'Language', icon: languageIcon, hint: '',to:'' },
     { name: 'Download App', icon: downloadIcon, hint: '',to:'' },
   ];
