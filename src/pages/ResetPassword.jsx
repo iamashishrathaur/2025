@@ -8,7 +8,7 @@ const ResetPassword = () => {
     <div>
          <header className='h-[16vw] w-full text-[5.333333vw] bg-[#ecf9e0]'>
         <div className='flex h-full'>
-          <div className='w-1/3 flex justify-start items-center'>
+          <div className='w-[20%] flex justify-start items-center'>
                 <button
                 className='p-[0_4vw] h-[9.6vw] text-[28px]'
                 onClick={() => navigate(-1)} // Navigate to the previous page
@@ -16,7 +16,7 @@ const ResetPassword = () => {
                 <IoChevronBackSharp />
             </button>
           </div>
-          <div className='w-1/3 flex justify-center items-center'>
+          <div className='w-[60%] flex justify-center items-center'>
             Reset Password
           </div>
         </div>
