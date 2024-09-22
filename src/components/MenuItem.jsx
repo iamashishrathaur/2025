@@ -23,7 +23,7 @@ const MenuItem = ({ balance, teamCount, commission }) => {
     { name: 'Team', icon: teamIcon, hint: `${teamCount || 0}`, to: '' },
     { name: 'Vip Level', icon: vipIcon, hint: '', to: '/viplevel' },
     { name: 'Fund Record', icon: recordIcon, hint: '', to: '/fundrecord' },
-    { name: 'Bank Card', icon: bankIcon, hint: 'Please add bank card', to: '' },
+    { name: 'Bank Card', icon: bankIcon, hint: 'Please add bank card', to: '/bankcard' },
     { name: 'Commission', icon: commissionIcon, hint: `₹ ${commission || 0}`, to: '' },
     { name: 'Help Center', icon: helpIcon, hint: '', to: '/help' },
     { name: 'My Info', icon: myIcon, hint: '', to: '/myinfo' },

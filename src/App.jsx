@@ -15,6 +15,7 @@ import ResetPassword from './pages/ResetPassword';
 import About from './pages/About';
 import Deposit from './pages/Deposit';
 import Withdraw from './pages/Withdraw';
+import BankCard from './pages/BankCard';
 
 function App() {
   const routes = createBrowserRouter([
@@ -74,6 +75,10 @@ function App() {
     {
       path: '/withdraw',
       element: <Withdraw/>,
+    },
+    {
+      path: '/bankcard',
+      element: <BankCard/>,
     },
   ]);
 

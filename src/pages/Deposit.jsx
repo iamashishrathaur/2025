@@ -7,14 +7,12 @@ import DepositCash from '../components/DepositCash';
 import DepositUSDT from '../components/DepositUSDT';
 import AccountBalance from '../components/AccountBalance';
 import ExplanationDeposit from '../components/ExplanationDeposit';
+import AccountTypeSelector from '../components/AccountTypeSelector';
 
 const Deposit = () => {
   const navigate = useNavigate();
-  const [isActive, setIsActive] = useState('ca');
+  const [isActive, setIsActive] = useState(1);
 
-  const handleClick = (type) => {
-    setIsActive(type);
-  };
 
   return (
     <div className="bg-gradient-to-b from-[#ecfade] to-[#efefef] min-h-screen flex flex-col">
@@ -30,19 +28,7 @@ const Deposit = () => {
       </header>
 
       <div className="p-[0_4.533333vw]">
-        <div className="h-[11.733333vw]">
-          <div className="flex justify-between h-[8.666667vw] bg-transparent">
-            {['ca', 'ua'].map((type) => (
-              <div
-                key={type}
-                className={`rounded-[4.266667vw] w-[48%] flex justify-center items-center border-[.266667vw] border-[#f0f0f0] text-[3.733333vw] transition-colors duration-500 ${isActive === type ? 'bg-[#4CA335]' : 'bg-white'}`}
-                onClick={() => handleClick(type)}
-              >
-                <span className={`font-normal ${isActive === type ? 'text-white' : 'text-[#000]'}`}>{type === 'ca' ? 'CASH ACCOUNT' : 'USDT ACCOUNT'}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+      <AccountTypeSelector isActive={isActive} setIsActive={setIsActive} />
         <AccountBalance/>
 
         {isActive === 'ca' ? <DepositCash /> : <DepositUSDT />}

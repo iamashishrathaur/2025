@@ -6,14 +6,11 @@ import WithdrawCash from '../components/WithdrawCash';
 import ToBind from '../components/ToBind';
 import ExplanationWithdraw from '../components/ExplainationWithdraw';
 import WithdrawUSDT from '../components/WithdrawUSDT';
+import AccountTypeSelector from '../components/AccountTypeSelector';
 
 const Withdraw = () => {
     const navigate = useNavigate();
-    const [isActive, setIsActive] = useState('ca');
-
-  const handleClick = (type) => {
-    setIsActive(type);
-  };
+    const [isActive, setIsActive] = useState(1);
 
   return (
     <div className="bg-gradient-to-b from-[#ecfade] to-[#efefef] min-h-screen flex flex-col">
@@ -29,23 +26,10 @@ const Withdraw = () => {
       </header>
       
       <div className="p-[0_4.533333vw]">
-        <div className="h-[11.733333vw]">
-          <div className="flex justify-between h-[8.666667vw] bg-transparent">
-            {['ca', 'ua'].map((type) => (
-              <div
-                key={type}
-                className={`rounded-[4.266667vw] w-[48%] flex justify-center items-center text-[3.733333vw] border-[.266667vw] border-[#f0f0f0] transition-colors duration-500 ${isActive === type ? 'bg-[#4CA335]' : 'bg-white'}`}
-                onClick={() => handleClick(type)}
-              >
-                <span className={`font-normal ${isActive === type ? 'text-white' : 'text-[#000]'}`}>{type === 'ca' ? 'CASH ACCOUNT' : 'USDT ACCOUNT'}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+      <AccountTypeSelector isActive={isActive} setIsActive={setIsActive} />
 
         <AccountBalance/>
-
-        {isActive === 'ca' ? <WithdrawCash /> : <WithdrawUSDT />}
+        {isActive === '1' ? <WithdrawCash /> : <WithdrawUSDT />}
         {/* <ToBind/> */}
         <ExplanationWithdraw/>
         </div>
