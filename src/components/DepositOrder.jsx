@@ -20,7 +20,9 @@ const DepositOrder = () => {
       <div>
         <div className="text-[4vw] font-bold text-[#4ca335]">+₹ 200</div>
         <div className="text-[#ffb51a] text-right text-[3.46667vw] mt-[1.86667vw] flex items-center">
-        <div className='bg-[#ffb51a] rounded-full size-[3vw] flex justify-center items-center mr-[.9668vw]'><BiTransferAlt className="size-[2.43333vw] p- text-white"/></div>
+        <div className='bg-[#ffb51a] rounded-full size-[3vw] flex justify-center items-center mr-[.9668vw]'>
+          <BiTransferAlt className="size-[2.43333vw] text-white"/>
+        </div>
           Transfering
         </div>
       </div>
