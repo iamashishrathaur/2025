@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { IoChevronBackSharp } from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom';
 import AccountBalance from '../components/AccountBalance';
-import WithdrawCash from '../components/WithdrawCASH';
+import WithdrawCash from '../components/WithdrawCash';
 import ToBind from '../components/ToBind';
 import ExplanationWithdraw from '../components/ExplainationWithdraw';
 import WithdrawUSDT from '../components/WithdrawUSDT';
