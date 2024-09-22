@@ -7,18 +7,18 @@ const AccountTypeSelector = ({ isActive, setIsActive }) => {
         {[1, 2].map((type) => (
           <div
             key={type}
-            className={`rounded-[4.266667vw] w-[48%] flex justify-center items-center text-[3.733333vw] border-[.266667vw] border-[#f0f0f0] transition-colors duration-500 ${isActive === type ? 'bg-[#4CA335]' : 'bg-white'}`}
+            className={`rounded-[4.266667vw] w-[48%] flex justify-center items-center text-[3.733333vw] border-[.266667vw] border-[#f0f0f0] transition-colors duration-200 ${isActive === type ? 'bg-[#4CA335]' : 'bg-white'}`}
             onClick={() => setIsActive(type)}
           >
             <span className={`font-normal flex items-center gap-[1vw] ${isActive === type ? 'text-white' : 'text-[#000]'}`}>
               {type === 1 ? (
                 <>
-                  <RiMoneyRupeeCircleFill />
+                  <RiMoneyRupeeCircleFill className='size-[5vw] mr-[0.333333vw]'/>
                   CASH ACCOUNT
                 </>
               ) : (
                 <>
-                  <RiMoneyDollarCircleFill />
+                  <RiMoneyDollarCircleFill className='size-[5vw] mr-[0.333333vw]'/>
                   USDT ACCOUNT
                 </>
               )}

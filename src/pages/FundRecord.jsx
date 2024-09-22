@@ -3,6 +3,8 @@ import { IoChevronBackSharp } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
 import emptyIcon from '../assets/no_data.png'
+import WithdrawOrder from '../components/WithdrawOrder';
+import DepositOrder from '../components/DepositOrder';
 
 const TABS = {
   ACCOUNT: 'account',
@@ -71,9 +73,11 @@ const FundRecord = () => {
             <TiArrowSortedUp color="#4ca335" />
           </div>
         </div>
-        <div className='m-[20vh_0] flex items-center justify-center'>
+        {/* <div className='m-[20vh_0] flex items-center justify-center'>
            <img src={emptyIcon} alt="" />
-       </div>
+       </div> */}
+       <WithdrawOrder/>
+       <DepositOrder/>
       </div>
     </div>
   );
