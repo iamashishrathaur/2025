@@ -1,16 +1,15 @@
-// Deposit.jsx
-import React, { useState } from 'react';
-import { IoChevronBackSharp } from 'react-icons/io5';
+import React, { useState } from 'react'
+import { IoChevronBackSharp } from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom';
-import withdrawImg from '../assets/withdraw.png';
-import DepositCash from '../components/DepositCash';
-import DepositUSDT from '../components/DepositUSDT';
 import AccountBalance from '../components/AccountBalance';
-import ExplanationDeposit from '../components/ExplanationDeposit';
+import WithdrawCash from '../components/WithdrawCASH';
+import ToBind from '../components/ToBind';
+import ExplanationWithdraw from '../components/ExplainationWithdraw';
+import WithdrawUSDT from '../components/WithdrawUSDT';
 
-const Deposit = () => {
-  const navigate = useNavigate();
-  const [isActive, setIsActive] = useState('ca');
+const Withdraw = () => {
+    const navigate = useNavigate();
+    const [isActive, setIsActive] = useState('ca');
 
   const handleClick = (type) => {
     setIsActive(type);
@@ -25,17 +24,17 @@ const Deposit = () => {
               <IoChevronBackSharp />
             </button>
           </div>
-          <div className="w-1/3 flex justify-center items-center">Deposit</div>
+          <div className="w-1/3 flex justify-center items-center">Withdraw</div>
         </div>
       </header>
-
+      
       <div className="p-[0_4.533333vw]">
         <div className="h-[11.733333vw]">
           <div className="flex justify-between h-[8.666667vw] bg-transparent">
             {['ca', 'ua'].map((type) => (
               <div
                 key={type}
-                className={`rounded-[4.266667vw] w-[48%] flex justify-center items-center border-[.266667vw] border-[#f0f0f0] text-[3.733333vw] transition-colors duration-500 ${isActive === type ? 'bg-[#4CA335]' : 'bg-white'}`}
+                className={`rounded-[4.266667vw] w-[48%] flex justify-center items-center text-[3.733333vw] border-[.266667vw] border-[#f0f0f0] transition-colors duration-500 ${isActive === type ? 'bg-[#4CA335]' : 'bg-white'}`}
                 onClick={() => handleClick(type)}
               >
                 <span className={`font-normal ${isActive === type ? 'text-white' : 'text-[#000]'}`}>{type === 'ca' ? 'CASH ACCOUNT' : 'USDT ACCOUNT'}</span>
@@ -43,13 +42,15 @@ const Deposit = () => {
             ))}
           </div>
         </div>
+
         <AccountBalance/>
 
-        {isActive === 'ca' ? <DepositCash /> : <DepositUSDT />}
-        <ExplanationDeposit/>
+        {isActive === 'ca' ? <WithdrawCash /> : <WithdrawUSDT />}
+        {/* <ToBind/> */}
+        <ExplanationWithdraw/>
+        </div>
       </div>
-    </div>
-  );
-};
+  )
+}
 
-export default Deposit;
+export default Withdraw

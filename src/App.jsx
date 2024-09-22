@@ -14,6 +14,7 @@ import FundRecord from './pages/FundRecord';
 import ResetPassword from './pages/ResetPassword';
 import About from './pages/About';
 import Deposit from './pages/Deposit';
+import Withdraw from './pages/Withdraw';
 
 function App() {
   const routes = createBrowserRouter([
@@ -69,6 +70,10 @@ function App() {
     {
       path: '/deposit',
       element: <Deposit/>,
+    },
+    {
+      path: '/withdraw',
+      element: <Withdraw/>,
     },
   ]);
 

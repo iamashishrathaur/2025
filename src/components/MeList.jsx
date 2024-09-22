@@ -5,7 +5,7 @@ const MeList = () => {
   const navigate = useNavigate();
   return (
     <div className="m-[2.666667vw_0_4.533333vw] flex justify-between">
-    <div className="bg-white flex items-center flex-col p-[4vw_2.666667vw_1.333333vw] w-[32%] rounded-[1.866667vw]">
+    <div className="bg-white flex items-center flex-col p-[4vw_2.666667vw_1.333333vw] w-[32%] rounded-[1.866667vw]" onClick={()=>navigate('/deposit')}>
       <div className="w-[5.866667vw]">
         <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAoCAYAAACFFRgXAAAABHNCSVQICAgIfAhkiAAAAcpJREFUWIXtmM2RgyAYhl93U8gWkXvIPS3ksJWIlewhLXiXnDdFbCfuATDwyY8KqJnJM8NMAgSewAeIgJ9apX7F1KnEAl5O0TUlQ6l+JdmotEu2xszpSYCp1Hk8LKhsdCpWIOi0N1kNlQYgp8FcpXvDGsxPAD8AvlThN4C/TbTCMP3hgPiiYlgvTBoAguTdics4RgiuVVsq+UJyqPMR/sO7gJlfDpBToDNryGnxwWFPUQ5Oqt0pCCoc445xjJXGWj80JDitsDEM9mAOs083aLNS58nPKeVadGb+UKZHmMZlh21HusZ4x2gAoCKVeKShMyIxfLkdGVDphyYB9KK9PkILmTnkvP2aMdyogsVcbscaqDo8Q4cBFZf5i7EGiS46ATnqfG6rStbzu0XSXLkIM9N3cDSqcjQEgJisZpK0UH1W8JwHsZNORMoHman1ZIwv7zPX0Wx00pN10Fuz1F4fQaEYWYTb6+9ZivVnl5BZntrXIbUBTWzkUkdW8wpPaxZv4dK8hUtTSljoD7l2B00RYbXv8hz77hK2eoB38o7h0swVPhWxmMEUYVHYIfvdkd6ozStQaruh23oSa7xfy/6qt6R0dlkNyyw++/3HP4EwYRyAuQ0WAAAAAElFTkSuQmCC"
@@ -19,7 +19,7 @@ const MeList = () => {
         ₹0
       </p>
     </div>
-    <div className="bg-white flex items-center flex-col p-[4vw_2.666667vw_1.333333vw] w-[32%] rounded-[1.866667vw]">
+    <div className="bg-white flex items-center flex-col p-[4vw_2.666667vw_1.333333vw] w-[32%] rounded-[1.866667vw]" onClick={()=>navigate('/withdraw')}>
       <div className="w-[5.866667vw]">
         <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAkCAYAAAD7PHgWAAAABHNCSVQICAgIfAhkiAAAAVlJREFUWIXtmEGShCAMRT9TcyRn3XHPFTyLeBau4F56Pd6JWYgWoC0ijThV/apcEIn8DiSVhgFoARCuowOgYhx0gWe4u0CNaeeCMDN5RiEy/BEQ1kepPrJe9K9KJGq9r+xy1qiYyd8bNnqLjGMQgKdnU/6kUkmyl+F0Z4HO+fSz+G4wwFVNJdVgitoqincSCLgihxJlJoqPwFS2CvXb4LIigLUA0De/9ZlvZI4ga2GaBC5/hjNfyCxQK2twSmRWgX0zdoAWlom4rKI6pqQzOC3GKM6LCS4rIz5MYpIwkeYfJnGLne3LQlIE+2bsuKz8fs7nsRHpkM9Cch3sm1G9emfqoHCtWuz5+FxRBy20OJocMxfWwXhxwDV1sD4rbubTD6bw7wQ+iqjY4Y4RJHvAMB1KYdkU8l0ghRDeeGlyS/9Jf3XDsEDGUFrUShzzQkq45gpuD4XpmhgA8AfFUDOXur6xhwAAAABJRU5ErkJggg=="

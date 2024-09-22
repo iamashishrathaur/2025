@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Explanation = () => {
+const ExplanationDeposit = () => {
   return (
     <div className="m-[4vw_0_0] pb-[4vw]">
           <p className="text-black text-opacity-85 text-[4vw] mb-[2.666667vw]">Explain</p>
@@ -20,4 +20,4 @@ const Explanation = () => {
   )
 }
 
-export default Explanation
+export default ExplanationDeposit
