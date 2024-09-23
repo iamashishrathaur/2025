@@ -34,7 +34,7 @@ const WithdrawOrder = ({ amount, fee, actualReceipt, date }) => {
 
         {/* Date and Status */}
         <div className="flex justify-between items-center mt-[0.87vw]">
-          <p className="text-[#666666] text-[3vw]">{date}</p>
+          <p className="text-[#666666]">{date}</p>
           <div className="flex items-center text-[#ffb51a] text-[3.47vw]">
             <div className="w-[3vw] h-[3vw] bg-[#ffb51a] rounded-full flex justify-center items-center mr-[0.97vw]">
               <BiTransferAlt className="text-white text-[2.43vw]" aria-label="Processing Icon" />

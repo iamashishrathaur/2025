@@ -12,11 +12,11 @@ const UserInfo = () => {
           />
         </div>
         <div>
-          <div className="flex">
-            <p>ID: 120041</p>
+          <div className="flex leading-3">
+            <p className='text-[3.466667vw]'>ID: 120041</p>
             <i className="text-[#4CA335] text-[5.33333vw] ml-[1.33333vw]"></i>
           </div>
-          <div className="text-[#949494] mt-[2.13333vw]">
+          <div className="text-[#949494] text-[3.466667vw] mt-[2.13333vw]">
             +91 790****205
           </div>
         </div>

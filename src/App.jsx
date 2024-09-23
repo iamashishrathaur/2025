@@ -18,6 +18,7 @@ import Withdraw from './pages/Withdraw';
 import BankCard from './pages/BankCard';
 import Team from './pages/Team';
 import Commission from './pages/Commission';
+import ProductProfile from './pages/ProductProfile';
 
 function App() {
   const routes = createBrowserRouter([
@@ -89,6 +90,10 @@ function App() {
     {
       path: '/commission',
       element: <Commission/>,
+    },
+    {
+      path: 'profile',
+      element: <ProductProfile/>,
     },
   ]);
 

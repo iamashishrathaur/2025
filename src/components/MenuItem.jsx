@@ -20,7 +20,7 @@ const MenuItem = ({ balance, teamCount, commission }) => {
 
   const items = [
     { name: 'My Order', icon: orderIcon, hint: `₹ ${balance || 0}`, to: '/myorder' },
-    { name: 'Team', icon: teamIcon, hint: `${teamCount || 0}`, to: '' },
+    { name: 'Team', icon: teamIcon, hint: `${teamCount || 0}`, to: '/team' },
     { name: 'Vip Level', icon: vipIcon, hint: '', to: '/viplevel' },
     { name: 'Fund Record', icon: recordIcon, hint: '', to: '/fundrecord' },
     { name: 'Bank Card', icon: bankIcon, hint: 'Please add bank card', to: '/bankcard' },
