@@ -65,7 +65,7 @@ const Products = () => {
             dailyEarnings={198} 
             totalRevenue={10890} 
             currentPrice={495} 
-            vip={1}
+            vip={0}
           />
           <Product 
             fundName="Land Fund No. 1" 
