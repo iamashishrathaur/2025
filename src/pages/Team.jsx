@@ -2,13 +2,16 @@ import React from 'react';
 import { IoChevronBackSharp } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import teamBg from '../assets/team_bg.png';
+import InviteList from '../components/InviteList';
+import { IoIosArrowDown } from "react-icons/io";
+
 
 const Team = () => {
   const navigate = useNavigate();
-  
-  // Function to copy the invite link to the clipboard
+  const inviteLink = 'https://dehaatll.com/register?inviteCode=clr82kmh';
+
   const handleCopyLink = () => {
-    navigator.clipboard.writeText('https://dehaatll.com/register?inviteCode=clr82kmh')
+    navigator.clipboard.writeText(inviteLink)
       .then(() => alert('Link copied to clipboard!'))
       .catch(() => alert('Failed to copy the link.'));
   };
@@ -36,14 +39,14 @@ const Team = () => {
 
       {/* Main Content Section */}
       <div
-        className="m-[1.333333vw_4vw_0] h-[40.933333vw] rounded-[2.133333vw] p-[6.133333vw_5.066667vw] text-[3.466667vw] bg-no-repeat leading-[5.333333vw]"
-        style={{ backgroundImage: `url(${teamBg})`, backgroundSize: '100% 100%' }}
+        className="m-[1.333333vw_4vw_0] h-[40.933333vw] rounded-[2.133333vw] p-[6.133333vw_5.066667vw] text-[3.466667vw] bg-no-repeat leading-[5.333333vw] bg-cover"
+        style={{ backgroundImage: `url(${teamBg})` }}
       >
         <div className="mb-[5.333333vw]">
           <p>Obtain Today Commission</p>
           <p className="font-bold text-[6.4vw] mt-[1.333333vw]">₹0</p>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between leading-[4.333333vw]">
           <div>
             <p>Obtain Total Commission</p>
             <p className="font-medium text-[5.333333vw] mt-[1.333333vw]">₹0</p>
@@ -55,22 +58,43 @@ const Team = () => {
         </div>
       </div>
 
-      {/* Invite link */}
+      {/* Invite Link Section */}
       <div className="rounded-[2.666667vw] bg-white p-[4vw] m-[2.666667vw_4vw_4vw]">
-        <div className="text-[4.266667vw] font-bold mb-[2.4vw]">
-          Invitation Link
-        </div>
+        <h2 className="text-[4.266667vw] font-bold mb-[2.4vw]">Invitation Link</h2>
         <div className="flex justify-between items-center">
           <div className="border border-opacity-15 rounded-[2.133333vw] p-[2.133333vw] text-[2.933333vw] text-opacity-85 leading-[4vw] h-[12.8vw] w-[59.866667vw] break-words">
-            https://dehaatll.com/register?inviteCode=clr82kmh
+            {inviteLink}
           </div>
           <button
-            className="w-[21.2vw] h-[12.8vw] p-[0_.666667vw] text-white text-[3.466667vw] bg-[#4CA335] rounded-[2.133333vw] flex justify-center items-center"
+            className="w-[21.2vw] h-[12.8vw] text-white text-[3.466667vw] bg-[#4CA335] rounded-[2.133333vw] flex justify-center items-center"
             onClick={handleCopyLink}
             aria-label="Copy invitation link"
           >
             COPY LINK
           </button>
+        </div>
+      </div>
+
+      {/* Invite List Section */}
+      <div className="max-h-80 rounded-[2.666667vw] bg-white p-[4.933333vw_3.466667vw_10vw] mt-[6.666667vw]">
+        <div className="flex items-center justify-between">
+          <p className="text-[4.266667vw] font-bold mb-[1.333333vw] flex items-center gap-2">
+            Level 1 teams 
+            <span className="text-[2.933333vw] text-black text-opacity-40">
+              (<span className="text-[#4ca335]">0</span>/ 1)
+            </span>
+          </p>
+          <div className="inline-flex items-center h-[7.466667vw] leading-[7.466667vw] border border-[#cbcbcb] rounded-[2.133333vw] text-[#24223a] text-[3.466667vw] p-[0_2.666667vw] gap-1">
+            All <IoIosArrowDown />
+          </div>
+        </div>
+
+        <div className="box-border">
+          <div className="h-[98%] pb-[2.666667vw]">
+            <InviteList />
+            <InviteList />
+          </div>
+          <div className="flex items-center justify-center w-full h-[13.333333vw] text-[3.733333vw] text-[#888]">No more</div>
         </div>
       </div>
     </div>
