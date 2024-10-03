@@ -1,8 +1,50 @@
-# React + Vite
+# React Investment App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple investment app built using **Vite** + **React**. It allows users to view various investment products, such as **land funds**, **seed funds**, and **mutual funds**, with options to invest directly. The project features a bottom navigation bar and leverages React components to manage products and interactions.
 
-Currently, two official plugins are available:
+## Table of Contents
+1. [Project Setup](#project-setup)
+2. [Running the App](#running-the-app)
+3. [Available Scripts](#available-scripts)
+4. [File Structure](#file-structure)
+5. [Errors](#errors)
+6. [Technologies Used](#technologies-used)
+7. [Contributing](#contributing)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Setup
+
+### Prerequisites
+
+Before running this project, ensure you have the following tools installed:
+
+- **Node.js** (>= 14.x recommended)
+- **npm** (or yarn, if you prefer)
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/yourusername/investment-app.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd investment-app
+    ```
+
+3. Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+## Running the App
+
+After successfully installing the dependencies, you can run the app locally.
+
+To start the development server:
+
+```bash
+npm run dev
