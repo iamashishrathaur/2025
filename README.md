@@ -2,15 +2,6 @@
 
 This project is a simple investment app built using **Vite** + **React**. It allows users to view various investment products, such as **land funds**, **seed funds**, and **mutual funds**, with options to invest directly. The project features a bottom navigation bar and leverages React components to manage products and interactions.
 
-## Table of Contents
-1. [Project Setup](#project-setup)
-2. [Running the App](#running-the-app)
-3. [Available Scripts](#available-scripts)
-4. [File Structure](#file-structure)
-5. [Errors](#errors)
-6. [Technologies Used](#technologies-used)
-7. [Contributing](#contributing)
-
 ## Project Setup
 
 ### Prerequisites
@@ -25,7 +16,7 @@ Before running this project, ensure you have the following tools installed:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/investment-app.git
+    git clone https://github.com/yourusername/2025.git
     ```
 
 2. Navigate to the project directory:
