@@ -10,9 +10,45 @@ import fundIcon3 from '../assets/fund_icon3.png';
 import fundIcon3Active from '../assets/fund_icon3_active.png';
 import fundIcon4 from '../assets/fund_icon4.png';
 import fundIcon4Active from '../assets/fund_icon4_active.png';
+import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
+  const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
+
+  const handleClick = () => {
+    navigate('/profile');
+  };
+
+  const productList = [
+    {
+      fundName: "Land Fund No. 1",
+      status: "Hot",
+      revenueDays: 55,
+      dailyEarnings: 198,
+      totalRevenue: 10890,
+      currentPrice: 495,
+      vip: 1,
+    },
+    {
+      fundName: "Land Fund No. 2",
+      status: "Hot",
+      revenueDays: 60,
+      dailyEarnings: 200,
+      totalRevenue: 11000,
+      currentPrice: 500,
+      vip: 0,
+    },
+    {
+      fundName: "Seed Fund No. 1",
+      status: "Popular",
+      revenueDays: 40,
+      dailyEarnings: 150,
+      totalRevenue: 6000,
+      currentPrice: 400,
+      vip: 2,
+    },
+  ];
 
   return (
     <>
@@ -48,34 +84,20 @@ const Products = () => {
         </div>
 
         {/* Content Container with Scroll-to-top behavior */}
-        <div className="mt-[-3.2vw] pt-[3.2vw] mb-[20vw] rounded-t-[5.333333vw] bg-[#f0f1f3] z-0 flex-1 overflow-y-hidden h-screen">
-          <Product 
-            fundName="Land Fund No. 1" 
-            status="Hot" 
-            revenueDays={55} 
-            dailyEarnings={198} 
-            totalRevenue={10890} 
-            currentPrice={495} 
-            vip={1}
-          />
-          <Product 
-            fundName="Land Fund No. 1" 
-            status="Hot" 
-            revenueDays={55} 
-            dailyEarnings={198} 
-            totalRevenue={10890} 
-            currentPrice={495} 
-            vip={0}
-          />
-          <Product 
-            fundName="Land Fund No. 1" 
-            status="Hot" 
-            revenueDays={55} 
-            dailyEarnings={198} 
-            totalRevenue={10890} 
-            currentPrice={495} 
-            vip={1}
-          />
+        <div className="mt-[-3.2vw] pt-[3.2vw] mb-[20vw] rounded-t-[5.333333vw] bg-[#f0f1f3] z-0 flex-1 overflow-y-auto h-screen">
+          {productList.map((product, index) => (
+            <Product
+              key={index}
+              fundName={product.fundName}
+              status={product.status}
+              revenueDays={product.revenueDays}
+              dailyEarnings={product.dailyEarnings}
+              totalRevenue={product.totalRevenue}
+              currentPrice={product.currentPrice}
+              vip={product.vip}
+              handleInvest={handleClick}
+            />
+          ))}
         </div>
       </div>
 
@@ -84,6 +106,6 @@ const Products = () => {
       </div>
     </>
   );
-}
+};
 
 export default Products;

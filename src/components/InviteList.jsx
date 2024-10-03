@@ -2,7 +2,7 @@ import React from 'react'
 
 const InviteList = () => {
   return (
-    <div className="flex justify-between p-[2.933333vw_0] border-b items-center mt-[6.666667vw]">
+    <div className="flex justify-between p-[2.933333vw_0] border-b items-center ">
     <div className="flex items-center">
       <div className="size-[9.066667vw] rounded-full mr-[2.933333vw]">
         <img

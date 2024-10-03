@@ -61,7 +61,7 @@ const Team = () => {
       {/* Invite Link Section */}
       <div className="rounded-[2.666667vw] bg-white p-[4vw] m-[2.666667vw_4vw_4vw]">
         <h2 className="text-[4.266667vw] font-bold mb-[2.4vw]">Invitation Link</h2>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-2">
           <div className="border border-opacity-15 rounded-[2.133333vw] p-[2.133333vw] text-[2.933333vw] text-opacity-85 leading-[4vw] h-[12.8vw] w-[59.866667vw] break-words">
             {inviteLink}
           </div>
@@ -90,7 +90,9 @@ const Team = () => {
         </div>
 
         <div className="box-border">
-          <div className="h-[98%] pb-[2.666667vw]">
+          <div className="h-[98%] pb-[2.666667vw] mt-[6.666667vw]">
+            <InviteList />
+            <InviteList />
             <InviteList />
             <InviteList />
           </div>

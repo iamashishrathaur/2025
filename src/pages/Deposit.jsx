@@ -1,5 +1,5 @@
 // Deposit.jsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IoChevronBackSharp } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import withdrawImg from '../assets/withdraw.png';
@@ -13,6 +13,10 @@ const Deposit = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(1);
 
+  useEffect(()=>{
+    console.log(isActive);
+  })
+  
 
   return (
     <div className="bg-gradient-to-b from-[#ecfade] to-[#efefef] min-h-screen flex flex-col">
@@ -31,7 +35,7 @@ const Deposit = () => {
       <AccountTypeSelector isActive={isActive} setIsActive={setIsActive} />
         <AccountBalance/>
 
-        {isActive === 'ca' ? <DepositCash /> : <DepositUSDT />}
+        {isActive === 1 ? <DepositCash /> : <DepositUSDT />}
         <ExplanationDeposit/>
       </div>
     </div>

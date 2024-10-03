@@ -29,7 +29,7 @@ const Withdraw = () => {
       <AccountTypeSelector isActive={isActive} setIsActive={setIsActive} />
 
         <AccountBalance/>
-        {isActive === '1' ? <WithdrawCash /> : <WithdrawUSDT />}
+        {isActive === 1 ? <WithdrawCash /> : <WithdrawUSDT />}
         {/* <ToBind/> */}
         <ExplanationWithdraw/>
         </div>
