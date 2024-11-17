@@ -1,8 +1,17 @@
 import { BiTransferAlt } from "react-icons/bi";
 import { TbCreditCardPay } from "react-icons/tb";
 import PropTypes from 'prop-types';
+import { format } from 'date-fns';
 
-const WithdrawOrder = ({ amount, fee, actualReceipt, date }) => {
+const WithdrawOrder = ({ data }) => {
+  const { amount, createdAt } = data;
+  const formattedDate = format(createdAt, 'dd-MM-yyyy HH:mm:ss');
+
+  // Calculate the fee and actual receipt (7% fee)
+  const fee = 7; // 7% fee
+  const feeAmount = (amount * fee) / 100;
+  const actualReceipt = amount - feeAmount;
+
   return (
     <div className="bg-white rounded-[2vw] mb-[2.67vw] p-[4vw] flex items-center">
       
@@ -34,7 +43,7 @@ const WithdrawOrder = ({ amount, fee, actualReceipt, date }) => {
 
         {/* Date and Status */}
         <div className="flex justify-between items-center mt-[0.87vw]">
-          <p className="text-[#666666]">{date}</p>
+          <p className="text-[#666666]">{formattedDate}</p>
           <div className="flex items-center text-[#ffb51a] text-[3.47vw]">
             <div className="w-[3vw] h-[3vw] bg-[#ffb51a] rounded-full flex justify-center items-center mr-[0.97vw]">
               <BiTransferAlt className="text-white text-[2.43vw]" aria-label="Processing Icon" />
@@ -47,18 +56,11 @@ const WithdrawOrder = ({ amount, fee, actualReceipt, date }) => {
   );
 };
 
-WithdrawOrder.defaultProps = {
-  amount: '108',
-  fee: '7',
-  actualReceipt: '100',
-  date: '22-09-2024 07:43:01',
-};
-
 WithdrawOrder.propTypes = {
-  amount: PropTypes.string,
-  fee: PropTypes.string,
-  actualReceipt: PropTypes.string,
-  date: PropTypes.string,
+  data: PropTypes.shape({
+    amount: PropTypes.number.isRequired,
+    createdAt: PropTypes.string,
+  }).isRequired,
 };
 
 export default WithdrawOrder;

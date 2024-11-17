@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IoChevronBackSharp } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
-import emptyIcon from '../assets/no_data.png'
+import emptyIcon from '../assets/no_data.png';
 import WithdrawOrder from '../components/WithdrawOrder';
 import DepositOrder from '../components/DepositOrder';
+import axios from 'axios';
 
 const TABS = {
   ACCOUNT: 'account',
@@ -14,11 +15,53 @@ const TABS = {
 
 const FundRecord = () => {
   const navigate = useNavigate();
-  const [isActive, setIsActive] = useState(TABS.ACCOUNT); // Track which button is active
+  const [fundData, setFundData] = useState([]); // Initialize as an array for multiple transactions
+  const [isActive, setIsActive] = useState(TABS.ACCOUNT);
 
   // Handle button click
   const handleClick = (type) => {
     setIsActive(type);
+  };
+
+  // Fetch fund data from API
+  const getFundData = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/api/v1/transactions', {
+        params: { mobile: '7905321205' },
+      });
+
+      // Update state with the array of transactions
+      if (response?.data?.data?.length > 0) {
+        setFundData(response.data.data);
+      } else {
+        setFundData([]); // Reset state if no data
+      }
+    } catch (err) {
+      console.error('Error fetching fund data:', err);
+    }
+  };
+
+  // Fetch fund data when the component mounts
+  useEffect(() => {
+    getFundData();
+  }, []);
+
+  // Render each transaction as either a WithdrawOrder or DepositOrder
+  const renderTransactions = () => {
+    if (fundData.length === 0) {
+      return (
+        <div className="m-[20vh_0] flex items-center justify-center">
+          <img src={emptyIcon} alt="No Data" />
+        </div>
+      );
+    }
+
+    return fundData.slice().reverse().map((item, index) => {
+      if (item.type === 'debit') {
+        return <WithdrawOrder key={index} data={item} />;
+      }
+      return <DepositOrder key={index} data={item} />;
+    });
   };
 
   const renderTabButton = (label, type) => {
@@ -44,12 +87,12 @@ const FundRecord = () => {
           <div className="w-1/3 flex justify-start items-center">
             <button
               className="p-[0_3.2vw] h-[9.6vw] text-[28px]"
-              onClick={() => navigate(-1)} // Navigate to the previous page
+              onClick={() => navigate(-1)}
             >
               <IoChevronBackSharp />
             </button>
           </div>
-          <div className="w-1/3 flex justify-center items-center">Help Center</div>
+          <div className="w-1/3 flex justify-center items-center">Fund Record</div>
         </div>
       </header>
 
@@ -73,11 +116,9 @@ const FundRecord = () => {
             <TiArrowSortedUp color="#4ca335" />
           </div>
         </div>
-        {/* <div className='m-[20vh_0] flex items-center justify-center'>
-           <img src={emptyIcon} alt="" />
-       </div> */}
-       <WithdrawOrder/>
-       <DepositOrder/>
+
+        {/* Render transactions */}
+        {renderTransactions()}
       </div>
     </div>
   );

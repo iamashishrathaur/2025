@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import BottomBar from '../components/BottomBar';
 import Product from '../components/Product';
 
+// Import icons
 import fundIcon1 from '../assets/fund_icon1.png';
 import fundIcon1Active from '../assets/fund_icon1_active.png';
 import fundIcon2 from '../assets/fund_icon2.png';
@@ -10,45 +12,27 @@ import fundIcon3 from '../assets/fund_icon3.png';
 import fundIcon3Active from '../assets/fund_icon3_active.png';
 import fundIcon4 from '../assets/fund_icon4.png';
 import fundIcon4Active from '../assets/fund_icon4_active.png';
-import { useNavigate } from 'react-router-dom';
+
+// Import JSON data
+import productData from '../data/products.json';
 
 const Products = () => {
   const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
 
+  // Structure tabs using JSON data
+  const productTabs = [
+    { name: "Land Fund", data: productData.landfund },
+    { name: "Upgrade Benefits", data: productData.upgrade },
+    { name: "Seed Fund", data: productData.seeds },
+    { name: "Mutual Funds", data: productData.mutual },
+  ];
+
+  const currentProducts = productTabs[current].data;
+
   const handleClick = () => {
     navigate('/profile');
   };
-
-  const productList = [
-    {
-      fundName: "Land Fund No. 1",
-      status: "Hot",
-      revenueDays: 55,
-      dailyEarnings: 198,
-      totalRevenue: 10890,
-      currentPrice: 495,
-      vip: 1,
-    },
-    {
-      fundName: "Land Fund No. 2",
-      status: "Hot",
-      revenueDays: 60,
-      dailyEarnings: 200,
-      totalRevenue: 11000,
-      currentPrice: 500,
-      vip: 0,
-    },
-    {
-      fundName: "Seed Fund No. 1",
-      status: "Popular",
-      revenueDays: 40,
-      dailyEarnings: 150,
-      totalRevenue: 6000,
-      currentPrice: 400,
-      vip: 2,
-    },
-  ];
 
   return (
     <>
@@ -59,45 +43,44 @@ const Products = () => {
           </div>
 
           <div className="flex justify-around">
-            {[
-              { name: "Land Fund", imgSrc: fundIcon1, activeSrc: fundIcon1Active },
-              { name: "Upgrade Benefits", imgSrc: fundIcon2, activeSrc: fundIcon2Active },
-              { name: "Seed Fund", imgSrc: fundIcon3, activeSrc: fundIcon3Active },
-              { name: "Mutual Funds", imgSrc: fundIcon4, activeSrc: fundIcon4Active }
-            ].map((item, index) => (
-              <div key={index} className="text-center" onClick={() => setCurrent(index)}>
+            {productTabs.map((tab, index) => (
+              <div
+                key={index}
+                className="text-center"
+                onClick={() => setCurrent(index)}
+              >
                 <div
                   className={`w-[15.466667vw] h-[15.466667vw] flex justify-center items-center rounded-[3.2vw] m-[0_auto] ${
                     index === current ? 'bg-[#000]' : 'bg-[#bbeda9]'
                   }`}
                 >
                   <div className="w-[5.866667vw] h-auto">
-                    <img src={index === current ? item.activeSrc : item.imgSrc} alt={`${item.name} icon`} />
+                    <img
+                      src={index === current ? fundIcon1Active : fundIcon1}
+                      alt={`${tab.name} icon`}
+                    />
                   </div>
                 </div>
                 <p className="text-[3.733333vw] font-medium text-center mt-[2.133333vw]">
-                  {item.name}
+                  {tab.name}
                 </p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Content Container with Scroll-to-top behavior */}
         <div className="mt-[-3.2vw] pt-[3.2vw] mb-[20vw] rounded-t-[5.333333vw] bg-[#f0f1f3] z-0 flex-1 overflow-y-auto h-screen">
-          {productList.map((product, index) => (
-            <Product
-              key={index}
-              fundName={product.fundName}
-              status={product.status}
-              revenueDays={product.revenueDays}
-              dailyEarnings={product.dailyEarnings}
-              totalRevenue={product.totalRevenue}
-              currentPrice={product.currentPrice}
-              vip={product.vip}
-              handleInvest={handleClick}
-            />
-          ))}
+          {currentProducts.length > 0 ? (
+            currentProducts.map((product, index) => (
+              <Product
+                key={index}
+                {...product}
+                handleInvest={handleClick}
+              />
+            ))
+          ) : (
+            <p className="text-center p-4">No products available in this category.</p>
+          )}
         </div>
       </div>
 
