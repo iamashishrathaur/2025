@@ -31,9 +31,6 @@ const Comments = () => {
     getComments();
   }, []);
 
-  if (loading) {
-    return <div className="flex justify-center items-center">Loading...</div>; // Optional loading state
-  }
 
   return (
     <>
@@ -48,9 +45,13 @@ const Comments = () => {
           </div>
         </header>
 
-        {error ? (
+        {loading ? (
           <div className="m-[20vh_0] flex items-center justify-center">
-            <p className="text-red-500">{error}</p>
+            <p className="text-gray-500">Loading comments...</p> {/* Display loading state */}
+          </div>
+        ) : error ? (
+          <div className="m-[20vh_0] flex items-center justify-center">
+            <p className="text-red-500">{error}</p> {/* Display error message */}
           </div>
         ) : comments.length === 0 ? (
           <div className="m-[20vh_0] flex items-center justify-center">
