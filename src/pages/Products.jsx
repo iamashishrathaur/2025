@@ -30,8 +30,8 @@ const Products = () => {
 
   const currentProducts = productTabs[current].data;
 
-  const handleClick = () => {
-    navigate('/profile');
+  const handleClick = (product) => {
+    navigate('/profile',{state:{product}});
   };
 
   return (
@@ -75,7 +75,7 @@ const Products = () => {
               <Product
                 key={index}
                 {...product}
-                handleInvest={handleClick}
+                handleInvest={()=>handleClick(product)}
               />
             ))
           ) : (
