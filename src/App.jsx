@@ -19,12 +19,23 @@ import BankCard from './pages/BankCard';
 import Team from './pages/Team';
 import Commission from './pages/Commission';
 import ProductProfile from './pages/ProductProfile';
+import Login from './pages/Login';
+import Registration from './pages/Registration';
+import SliderPuzzleCaptcha from './components/SliderPuzzleCaptcha';
 
 function App() {
   const routes = createBrowserRouter([
     {
       path: '/',
       element: <Home />,
+    },
+    {
+      path: '/login',
+      element: <Login/>,
+    },
+    {
+      path: '/registration',
+      element: <Registration/>,
     },
     {
       path: '/my',
@@ -92,8 +103,12 @@ function App() {
       element: <Commission/>,
     },
     {
-      path: 'profile',
+      path: '/profile',
       element: <ProductProfile/>,
+    },
+    {
+      path: '/captcha',
+      element: <SliderPuzzleCaptcha/>,
     },
   ]);
 
